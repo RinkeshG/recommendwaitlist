@@ -1,4 +1,5 @@
 'use client';
+import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 
 export default function Home(){
@@ -164,7 +165,8 @@ export default function Home(){
 }
 
 /* --- helpers --- */
-function Card({children, className=""}:{children:React.ReactNode; className?: string}){
+type CardProps = { children: ReactNode; className?: string };
+function Card({ children, className = "" }: CardProps){
   return (
     <div className={`rounded-2xl border border-neutral-200 bg-white p-5 shadow-[0_6px_24px_rgba(0,0,0,0.06)] transition hover:shadow-[0_10px_28px_rgba(0,0,0,0.09)] hover:-translate-y-[2px] ${className}`}>
       {children}
@@ -172,26 +174,25 @@ function Card({children, className=""}:{children:React.ReactNode; className?: st
   );
 }
 
-function CardTitle({children}:{children:React.ReactNode}){
+type TitleProps = { children: ReactNode };
+function CardTitle({ children }: TitleProps){
   return <h3 className="font-lexend mb-2 text-sm font-semibold tracking-tight text-neutral-900">{children}</h3>;
 }
 
-function CardBody({children}:{children:React.ReactNode}){
+function CardBody({ children }: TitleProps){
   return <p className="text-sm text-neutral-600 leading-relaxed">{children}</p>;
 }
 
-function CardFoot({children}:{children:React.ReactNode}){
+function CardFoot({ children }: TitleProps){
   return <p className="mt-3 text-xs text-neutral-400">{children}</p>;
 }
 
-function SimpleFeatureCard({title, desc, delay}:{title:string; desc:string; delay?: string}){
+type SimpleFeatureProps = { title: string; desc: string; delay?: string };
+function SimpleFeatureCard({ title, desc, delay }: SimpleFeatureProps){
   return (
     <div className="reveal rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition hover:shadow-md hover:-translate-y-[2px]" style={{ transitionDelay: delay }}>
       <h4 className="font-lexend text-base font-semibold text-neutral-900">{title}</h4>
       <p className="mt-2 text-sm text-neutral-600 leading-relaxed">{desc}</p>
     </div>
   );
-}
-
- className="block transition hover:text-neutral-900">{children}</a>;
 }
