@@ -31,6 +31,9 @@ export default function Home(){
         /* scroll reveal */
         .reveal { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; will-change: transform, opacity; }
         .reveal.reveal-in { opacity: 1; transform: translateY(0); }
+        /* hide scrollbar cross-browser */
+        .hide-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
       `}</style>
 
       <div className="font-inter min-h-screen bg-white text-neutral-900">
@@ -76,10 +79,7 @@ export default function Home(){
           {/* Visual Cards */}
           <div className="relative">
             {/* Mobile: horizontal scroll */}
-            <div className="-mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-2 md:hidden [scrollbar-width:none] [-ms-overflow-style:none]">
-              <style jsx>{`
-                div::-webkit-scrollbar{display:none}
-              `}</style>
+            <div className="-mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-2 md:hidden hide-scroll">
               <Card className="snap-start min-w-[80%]">
                 <CardTitle>🍜 Food</CardTitle>
                 <CardBody>“Bombay to Barcelona Café — get the orange cheesecake.”</CardBody>
