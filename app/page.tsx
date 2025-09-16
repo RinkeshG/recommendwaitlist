@@ -82,45 +82,24 @@ export default function Home(){
           </div>
 
           {/* Visual Cards */}
-          <div className="relative">
-            {/* Mobile: clean horizontal rail */}
-            <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-1 md:hidden hide-scroll">
-              <Card className="snap-start min-w-[88%]">
+          <div className="relative flex justify-center md:justify-end">
+            {/* Same layered composition on ALL screens, scaled responsively */}
+            <div className="relative h-[220px] w-full max-w-[300px] sm:h-[260px] sm:max-w-[340px] md:h-[300px] md:max-w-[400px]">
+              <Card className="absolute left-0 top-6 -rotate-6">
                 <CardTitle>🍜 Food</CardTitle>
                 <CardBody>“Bombay to Barcelona Café — get the orange cheesecake.”</CardBody>
                 <CardFoot>Recommended by Aisha</CardFoot>
               </Card>
-              <Card className="snap-start min-w-[88%]">
+              <Card className="absolute left-8 top-24 rotate-[5deg] sm:left-10 sm:top-28">
                 <CardTitle>🎬 Movies</CardTitle>
                 <CardBody>“Past Lives — tender, slow, unforgettable.”</CardBody>
                 <CardFoot>Recommended by Raj</CardFoot>
               </Card>
-              <Card className="snap-start min-w-[88%]">
+              <Card className="absolute right-0 top-0 rotate-[10deg]">
                 <CardTitle>✈️ Travel</CardTitle>
                 <CardBody>“Gokarna — Kudle sunrise + Shack #3 breakfast.”</CardBody>
                 <CardFoot>Recommended by Neha</CardFoot>
               </Card>
-            </div>
-
-            {/* Tablet/Desktop: layered composition */}
-            <div className="relative hidden place-items-center md:grid">
-              <div className="relative h-[300px] w-full max-w-[400px]">
-                <Card className="absolute left-0 top-8 -rotate-6">
-                  <CardTitle>🍜 Food</CardTitle>
-                  <CardBody>“Bombay to Barcelona Café — get the orange cheesecake.”</CardBody>
-                  <CardFoot>Recommended by Aisha</CardFoot>
-                </Card>
-                <Card className="absolute left-10 top-28 rotate-[5deg]">
-                  <CardTitle>🎬 Movies</CardTitle>
-                  <CardBody>“Past Lives — tender, slow, unforgettable.”</CardBody>
-                  <CardFoot>Recommended by Raj</CardFoot>
-                </Card>
-                <Card className="absolute right-0 top-0 rotate-[10deg]">
-                  <CardTitle>✈️ Travel</CardTitle>
-                  <CardBody>“Gokarna — Kudle sunrise + Shack #3 breakfast.”</CardBody>
-                  <CardFoot>Recommended by Neha</CardFoot>
-                </Card>
-              </div>
             </div>
           </div>
         </section>
